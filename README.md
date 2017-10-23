@@ -71,28 +71,25 @@ npm install redis --save
 * The tool 'load_redis' parses some JSON data and inserts Hashes into Redis
 
 ```
-//Insert as HashMap
-value_arr = [];
+var valueArr = [];
 
-for (prop in json_value) {
-
-  value_arr.push(prop);
-  value_arr.push(json_value[prop]);
+for (prop in kvPair[1]) {
+  valueArr.push(prop);
+  valueArr.push(kvPair[1][prop]);
 }
 
-client.hmset(key, value_arr, function (err, res) {
-
-  console.log(res);
+client.hmset(kvPair[0], valueArr, function (err, res) {
+ console.log(res);
 });
 ```
 
 * It also indexes by year of birth
 
 ```
-if (json_value.hasOwnProperty("born")) {
-  client.zadd("idx:born", parseInt(json_value.born), key, function (err, res) {
-    console.log(res);
-  });
+if (kvPair[1].hasOwnProperty("born")) {
+ client.zadd("idx::born", parseInt(kvPair[1].born), kvPair[0], function (err, res) {
+  console.log(res);
+ });
 }
 ```
 
@@ -101,6 +98,8 @@ if (json_value.hasOwnProperty("born")) {
 ```
 KEYS Person::Ke*
 ```
+
+> This is dirty as it means scanning the whole key space!
 
 * Get all properties
 
@@ -117,7 +116,7 @@ HGET Person::Keanu name
 * Range 'query' by year of birth
 
 ```
-ZRANGEBYSCORE idx:born 1978 1985
+ZRANGEBYSCORE idx::born 1978 1985
 1) "Person::Emil"
 2) "Person::ChristinaR"
 3) "Person::NatalieP"
