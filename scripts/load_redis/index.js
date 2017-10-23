@@ -1,92 +1,131 @@
 const fs = require('fs');
 const redis = require('redis');
 
-function usage() {
- 
-  console.log("Use: node index.js <file.json> <port>");
+/**
+ * Usage of this script
+ */
+function _usage() {
+
+  console.log("Use: node index.js <json_file> <redis_port>");
 
 }
 
+/**
+ * Validate arguments
+ */
+function _isValid(file, port) {
+
+  var result = true;
+
+  if (!fs.existsSync(file)) result = false;
+  if (typeof parseInt(port,10) !== "number") result = false;
+
+  return result;
+}
+
+/**
+ * Connect to Redis
+ */
+function _connect(port) {
+
+  var client = redis.createClient(port);
+
+  client.on("error", function (err) {
+    console.error(err);
+  });
+
+  return client;
+}
+
+/**
+ * Parse the key and the value of the line
+ */
+function _parse(line) {
+
+  var result = [];
+
+  //Split between key and data
+  var parts = line.split('{');
+  var keyIn = parts[0].split('"').join('');
+
+  //Split key by delimitter
+  var keyParts = keyIn.split(':');
+
+  //Construct key from parts
+  var key = "";
+  for (var i = 0, len = keyParts.length; i < len; i++) {
+    if (keyParts[i] != '') key = key + keyParts[i];
+    if (i < len-2) key = key + ":";
+  }
+  key = key.trim();
+
+  //Reconstruct value
+  value = "{" + parts[1].trim();
+
+
+  result.push(key);
+  result.push(JSON.parse(value));
+  return result;
+}
+
+
+/**
+ * Main entry point
+ */
 function main() {
 
   var args = process.argv;
 
   if (args.length == 4) {
-	console.log("Loading data ...");
 
-	var file = args[2];
-	var port =  parseInt(args[3]);
+    console.log("START - Loading data ...");
 
-        //Init Redis
-	var client = redis.createClient(port);
+    //Arguments
+    var file = args[2];
+    var port =  parseInt(args[3]);
 
-	client.on("error", function (err) {
-          console.log("Error " + err);
-        });
+    if (_isValid(file, port)) {
 
-        //Read file
-	fs.readFileSync(file).toString().split('\n').forEach(function (line) {
-	
-	  //console.log("line = " + line);
-          if (line != '') {
-	
-            parts = line.split('{');
-	
-	    key_in = parts[0].split('"').join('');
-            key_parts = key_in.split(':');
-         
-	    key = "";
+      //Connect to Redis
+      var client = _connect(parseInt(port,10));
 
-            for (var i = 0, len = key_parts.length; i < len; i++) {
-              
-              if (key_parts[i] != '') key = key + key_parts[i];
-	      if (i < len-2) key = key + ":";
+      //Read the file
+      fs.readFileSync(file, 'utf8').split('\n').forEach(function (line) {
 
-            }
-	    
-            key = key.trim();
+        //Skip empty lines
+        if (line != '') {
 
-            console.log("key = " + key);
-	    value = "{" + parts[1];
-	    console.log("value = " + value);            
+          var kvPair = _parse(line);
 
-            json_value = JSON.parse(value);
-       
-
-            //Maintain year index
-            if (json_value.hasOwnProperty("born")) {
-              client.zadd("idx::born", parseInt(json_value.born), key, function (err, res) {
-
-                console.log(res);
-
-	      });
-            }
-
-
-            //Insert as HashMap
-            value_arr = []; 
-
-	    for (prop in json_value) {
-
-              value_arr.push(prop);
-              value_arr.push(json_value[prop]);
-            }
-
-            client.hmset(key, value_arr, function (err, res) {
-              
+          //Maintain year index
+          if (kvPair[1].hasOwnProperty("born")) {
+            client.zadd("idx::born", parseInt(kvPair[1].born), kvPair[0], function (err, res) {
               console.log(res);
-
             });
           }
 
-	});
+          //Insert as HashMap
+          var valueArr = [];
+
+          for (prop in kvPair[1]) {
+            valueArr.push(prop);
+            valueArr.push(kvPair[1][prop]);
+          }
+
+          client.hmset(kvPair[0], valueArr, function (err, res) {
+            console.log(res);
+          });
+
+        }
+      });
+
+    } else {
+      _usage();
+    }
+  } else {
+   _usage();
   }
-  else {
+}
 
-   usage();
-  }
-
-};
-
-
+//Run the main function
 main();
