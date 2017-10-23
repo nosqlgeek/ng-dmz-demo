@@ -73,7 +73,7 @@ function main() {
             }
 
 
-            //Insert as HashSet
+            //Insert as HashMap
             value_arr = []; 
 
 	    for (prop in json_value) {
