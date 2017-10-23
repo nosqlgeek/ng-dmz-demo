@@ -10,13 +10,15 @@ The purpose of the demo is to show how different the fundamental data models (no
 
 * KV-Stores: Simplicity of the data model which allows 'high scalability'
 * Graph DBS: More complex underlying model with focus on efficient traversal
+
+In addition we will have a practical example how to async. exchange data between services:
+
 * Pub-Sub: Give an example for exchanging data between services
 
 ## Idea
 
-* Actor Profiles: This represents a User Profile Store. Redis will be used as a simple KV-Store (or Data Structure Store) by focusing on the storage and the retrieval of actor profiles.
-* Movies Network: The network contains the information which movie is related to which other one and to which actor.
-* Pub-Sub: Helps to exchange data async. between services
+* Actor Profiles: This represents a typical user profile store. Redis will be used as a simple KV-Store (or Data Structure Store) by focusing on the storage and the retrieval of actor profiles.
+* Movies Network: The network contains the information which movie is related to which other ones and to which actors.
 
 Neo4j's 'Movies' demo data will be used.
 
@@ -29,8 +31,8 @@ Here some examples:
 * Movies Network Service
   * Find all actors those played in a specific movie
 
-* Data exchange between them
-  * If someone likes a movie then the relevance of an actor will be increased as well
+* Data exchange between the services
+  * If someone likes a movie in which the actor played then the relevance of an actor will be increased as well
 
 ## Demo (database tier only)
 
