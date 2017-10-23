@@ -16,11 +16,23 @@ The purpose of the demo is to show how different the fundamental data models (no
 
 * Actor Profiles: This represents a User Profile Store. Redis will be used as a simple KV-Store (or Data Structure Store) by focusing on the storage and the retrieval of actor profiles.
 * Movies Network: The network contains the information which movie is related to which other one and to which actor.
-* Pub-Sub: If someone likes a Movie then the relevance of an actor will be increased as well.
+* Pub-Sub: Helps to exchange data async. between services
 
 Neo4j's 'Movies' demo data will be used.
 
-## Demo
+Here some examples:
+
+* Actor Profiles Service
+  * Find actors by their id-s
+  * Find actors by their properties
+  
+* Movies Network Service
+  * Find all actors those played in a specific movie
+
+* Data exchange between them
+  * If someone likes a movie then the relevance of an actor will be increased as well
+
+## Demo (database tier only)
 
 ### Redis
 
