@@ -114,7 +114,7 @@ HGETALL Person::Keanu
 HGET Person::Keanu name
 ```
 
-* Scan by year of birth
+* Range 'query' by year of birth
 
 ```
 ZRANGEBYSCORE idx:born 1978 1985
