@@ -19,3 +19,170 @@ The purpose of the demo is to show how different the fundamental data models (no
 * Pub-Sub: If someone likes a Movie then the relevance of an actor will be increased as well.
 
 Neo4j's 'Movies' demo data will be used.
+
+## Demo
+
+### Redis
+
+* Install a single Redis instance
+
+```
+brew install redis
+```
+
+> BTW: On Linux just use the package manager of your distro
+
+
+* Start a local Redis
+
+> The demo is the same for Open Source and for Enterprise Redis
+
+```
+redis-server ./redis.conf 
+```
+
+* Connect to the local instance
+
+
+```
+redis-cli -h localhost -p 6379
+```
+
+* Initialize a Node project and install the Redis client library
+
+```
+npm install redis --save
+```
+
+* The tool 'load_redis' parses some JSON data and inserts Hashes into Redis
+
+```
+//Insert as HashSet
+value_arr = [];
+
+for (prop in json_value) {
+
+  value_arr.push(prop);
+  value_arr.push(json_value[prop]);
+}
+
+client.hmset(key, value_arr, function (err, res) {
+
+  console.log(res);
+});
+```
+
+* It also indexes by year of birth
+
+```
+if (json_value.hasOwnProperty("born")) {
+  client.zadd("idx:born", parseInt(json_value.born), key, function (err, res) {
+    console.log(res);
+  });
+}
+```
+
+* List all persons starting with a 'K'
+
+```
+KEYS Person::Ke*
+```
+
+* Get all properties
+
+```
+HGETALL Person::Keanu
+``` 
+
+* Get a specific property
+
+```
+HGET Person::Keanu name
+```
+
+* Scan by year of birth
+
+```
+ZRANGEBYSCORE idx:born 1978 1985
+1) "Person::Emil"
+2) "Person::ChristinaR"
+3) "Person::NatalieP"
+4) "Person::Rain"
+5) "Person::EmileH"
+```
+
+* Optional: Show the Redis Pack Enterprise Web UI
+
+
+
+### Neo4j
+
+* Install Neo4j
+
+```
+brew install neo4j
+```
+
+* Start Neo4j
+
+```
+brew services -v start neo4j
+```
+
+* Inspect the ports
+
+```
+cat /usr/local/var/log/neo4j.log
+Remote interface available at http://localhost:7474/
+```
+
+* Connect to the web console and import the data
+* The default password is 'neo4j'
+* Change it to 'test'
+* Copy and past the Movies data creation script to the web console and press 'play'
+* Execute a query
+
+```
+MATCH (keanu {name:"Keanu Reeves"})-[:ACTED_IN]->(movies {title:"The Matrix"})<-[:ACTED_IN]-(actors) RETURN actors
+```
+
+### Redis Pub/Sub
+
+* Open a redis-cli
+
+```
+redis-cli -h localhost -p 6379
+```
+
+* Subscribe to a channel
+
+```
+SUBSCRIBE public
+```
+
+* Open another redis-cli
+* Publish a message
+
+```
+PUBLISH public Person::Keanu 
+```
+
+* Enable key space notifications via redis-cli
+
+```
+CONFIG SET notify-keyspace-events KEA
+```
+
+* Run redis-cli as a subscriber
+
+```
+redis-cli --csv psubscribe '__key*__:*'
+```
+
+* Change Keanu
+
+```
+HMSET Person::Keanu changed 1
+```
+
+* Show the windows with the csv output

@@ -1,0 +1,134 @@
+"Person::Keanu" : {"name" : "Keanu Reeves", "born" : 1964}
+"Person::Carrie" : {"name" : "Carrie-Anne Moss", "born" : 1967}
+"Person::Laurence" : {"name" : "Laurence Fishburne", "born" : 1961}
+"Person::Hugo" : {"name" : "Hugo Weaving", "born" : 1960}
+"Person::LillyW" : {"name" : "Lilly Wachowski", "born" : 1967}
+"Person::LanaW" : {"name" : "Lana Wachowski", "born" : 1965}
+"Person::JoelS" : {"name" : "Joel Silver", "born" : 1952}
+"Person::Emil" : {"name" : "Emil Eifrem", "born" : 1978}
+"Person::Charlize" : {"name" : "Charlize Theron", "born" : 1975}
+"Person::Al" : {"name" : "Al Pacino", "born" : 1940}
+"Person::Taylor" : {"name" : "Taylor Hackford", "born" : 1944}
+"Person::TomC" : {"name" : "Tom Cruise", "born" : 1962}
+"Person::JackN" : {"name" : "Jack Nicholson", "born" : 1937}
+"Person::DemiM" : {"name" : "Demi Moore", "born" : 1962}
+"Person::KevinB" : {"name" : "Kevin Bacon", "born" : 1958}
+"Person::KieferS" : {"name" : "Kiefer Sutherland", "born" : 1966}
+"Person::NoahW" : {"name" : "Noah Wyle", "born" : 1971}
+"Person::CubaG" : {"name" : "Cuba Gooding Jr.", "born" : 1968}
+"Person::KevinP" : {"name" : "Kevin Pollak", "born" : 1957}
+"Person::JTW" : {"name" : "J.T. Walsh", "born" : 1943}
+"Person::JamesM" : {"name" : "James Marshall", "born" : 1967}
+"Person::ChristopherG" : {"name" : "Christopher Guest", "born" : 1948}
+"Person::RobR" : {"name" : "Rob Reiner", "born" : 1947}
+"Person::AaronS" : {"name" : "Aaron Sorkin", "born" : 1961}
+"Person::KellyM" : {"name" : "Kelly McGillis", "born" : 1957}
+"Person::ValK" : {"name" : "Val Kilmer", "born" : 1959}
+"Person::AnthonyE" : {"name" : "Anthony Edwards", "born" : 1962}
+"Person::TomS" : {"name" : "Tom Skerritt", "born" : 1933}
+"Person::MegR" : {"name" : "Meg Ryan", "born" : 1961}
+"Person::TonyS" : {"name" : "Tony Scott", "born" : 1944}
+"Person::JimC" : {"name" : "Jim Cash", "born" : 1941}
+"Person::ReneeZ" : {"name" : "Renee Zellweger", "born" : 1969}
+"Person::KellyP" : {"name" : "Kelly Preston", "born" : 1962}
+"Person::JerryO" : {"name" : "Jerry O'Connell", "born" : 1974}
+"Person::JayM" : {"name" : "Jay Mohr", "born" : 1970}
+"Person::BonnieH" : {"name" : "Bonnie Hunt", "born" : 1961}
+"Person::ReginaK" : {"name" : "Regina King", "born" : 1971}
+"Person::JonathanL" : {"name" : "Jonathan Lipnicki", "born" : 1996}
+"Person::CameronC" : {"name" : "Cameron Crowe", "born" : 1957}
+"Person::RiverP" : {"name" : "River Phoenix", "born" : 1970}
+"Person::CoreyF" : {"name" : "Corey Feldman", "born" : 1971}
+"Person::WilW" : {"name" : "Wil Wheaton", "born" : 1972}
+"Person::JohnC" : {"name" : "John Cusack", "born" : 1966}
+"Person::MarshallB" : {"name" : "Marshall Bell", "born" : 1942}
+"Person::HelenH" : {"name" : "Helen Hunt", "born" : 1963}
+"Person::GregK" : {"name" : "Greg Kinnear", "born" : 1963}
+"Person::JamesB" : {"name" : "James L. Brooks", "born" : 1940}
+"Person::AnnabellaS" : {"name" : "Annabella Sciorra", "born" : 1960}
+"Person::MaxS" : {"name" : "Max von Sydow", "born" : 1929}
+"Person::WernerH" : {"name" : "Werner Herzog", "born" : 1942}
+"Person::Robin" : {"name" : "Robin Williams", "born" : 1951}
+"Person::VincentW" : {"name" : "Vincent Ward", "born" : 1956}
+"Person::EthanH" : {"name" : "Ethan Hawke", "born" : 1970}
+"Person::RickY" : {"name" : "Rick Yune", "born" : 1971}
+"Person::JamesC" : {"name" : "James Cromwell", "born" : 1940}
+"Person::ScottH" : {"name" : "Scott Hicks", "born" : 1953}
+"Person::ParkerP" : {"name" : "Parker Posey", "born" : 1968}
+"Person::DaveC" : {"name" : "Dave Chappelle", "born" : 1973}
+"Person::SteveZ" : {"name" : "Steve Zahn", "born" : 1967}
+"Person::TomH" : {"name" : "Tom Hanks", "born" : 1956}
+"Person::NoraE" : {"name" : "Nora Ephron", "born" : 1941}
+"Person::RitaW" : {"name" : "Rita Wilson", "born" : 1956}
+"Person::BillPull" : {"name" : "Bill Pullman", "born" : 1953}
+"Person::VictorG" : {"name" : "Victor Garber", "born" : 1949}
+"Person::RosieO" : {"name" : "Rosie O'Donnell", "born" : 1962}
+"Person::JohnS" : {"name" : "John Patrick Stanley", "born" : 1950}
+"Person::Nathan" : {"name" : "Nathan Lane", "born" : 1956}
+"Person::BillyC" : {"name" : "Billy Crystal", "born" : 1948}
+"Person::CarrieF" : {"name" : "Carrie Fisher", "born" : 1956}
+"Person::BrunoK" : {"name" : "Bruno Kirby", "born" : 1949}
+"Person::LivT" : {"name" : "Liv Tyler", "born" : 1977}
+"Person::Brooke" : {"name" : "Brooke Langton", "born" : 1970}
+"Person::Gene" : {"name" : "Gene Hackman", "born" : 1930}
+"Person::Orlando" : {"name" : "Orlando Jones", "born" : 1968}
+"Person::Howard" : {"name" : "Howard Deutch", "born" : 1950}
+"Person::ChristianB" : {"name" : "Christian Bale", "born" : 1974}
+"Person::ZachG" : {"name" : "Zach Grenier", "born" : 1954}
+"Person::MikeN" : {"name" : "Mike Nichols", "born" : 1931}
+"Person::RichardH" : {"name" : "Richard Harris", "born" : 1930}
+"Person::ClintE" : {"name" : "Clint Eastwood", "born" : 1930}
+"Person::Takeshi" : {"name" : "Takeshi Kitano", "born" : 1947}
+"Person::Dina" : {"name" : "Dina Meyer", "born" : 1968}
+"Person::IceT" : {"name" : "Ice-T", "born" : 1958}
+"Person::RobertL" : {"name" : "Robert Longo", "born" : 1953}
+"Person::HalleB" : {"name" : "Halle Berry", "born" : 1966}
+"Person::JimB" : {"name" : "Jim Broadbent", "born" : 1949}
+"Person::TomT" : {"name" : "Tom Tykwer", "born" : 1965}
+"Person::DavidMitchell" : {"name" : "David Mitchell", "born" : 1969}
+"Person::StefanArndt" : {"name" : "Stefan Arndt", "born" : 1961}
+"Person::IanM" : {"name" : "Ian McKellen", "born" : 1939}
+"Person::AudreyT" : {"name" : "Audrey Tautou", "born" : 1976}
+"Person::PaulB" : {"name" : "Paul Bettany", "born" : 1971}
+"Person::RonH" : {"name" : "Ron Howard", "born" : 1954}
+"Person::NatalieP" : {"name" : "Natalie Portman", "born" : 1981}
+"Person::StephenR" : {"name" : "Stephen Rea", "born" : 1946}
+"Person::JohnH" : {"name" : "John Hurt", "born" : 1940}
+"Person::BenM" : {"name" : "Ben Miles", "born" : 1967}
+"Person::EmileH" : {"name" : "Emile Hirsch", "born" : 1985}
+"Person::JohnG" : {"name" : "John Goodman", "born" : 1960}
+"Person::SusanS" : {"name" : "Susan Sarandon", "born" : 1946}
+"Person::MatthewF" : {"name" : "Matthew Fox", "born" : 1966}
+"Person::ChristinaR" : {"name" : "Christina Ricci", "born" : 1980}
+"Person::Rain" : {"name" : "Rain", "born" : 1982}
+"Person::NaomieH" : {"name" : "Naomie Harris"}
+"Person::MichaelD" : {"name" : "Michael Clarke Duncan", "born" : 1957}
+"Person::DavidM" : {"name" : "David Morse", "born" : 1953}
+"Person::SamR" : {"name" : "Sam Rockwell", "born" : 1968}
+"Person::GaryS" : {"name" : "Gary Sinise", "born" : 1955}
+"Person::PatriciaC" : {"name" : "Patricia Clarkson", "born" : 1959}
+"Person::FrankD" : {"name" : "Frank Darabont", "born" : 1959}
+"Person::FrankL" : {"name" : "Frank Langella", "born" : 1938}
+"Person::MichaelS" : {"name" : "Michael Sheen", "born" : 1969}
+"Person::OliverP" : {"name" : "Oliver Platt", "born" : 1960}
+"Person::DannyD" : {"name" : "Danny DeVito", "born" : 1944}
+"Person::JohnR" : {"name" : "John C. Reilly", "born" : 1965}
+"Person::EdH" : {"name" : "Ed Harris", "born" : 1950}
+"Person::BillPax" : {"name" : "Bill Paxton", "born" : 1955}
+"Person::PhilipH" : {"name" : "Philip Seymour Hoffman", "born" : 1967}
+"Person::JanB" : {"name" : "Jan de Bont", "born" : 1943}
+"Person::RobertZ" : {"name" : "Robert Zemeckis", "born" : 1951}
+"Person::MilosF" : {"name" : "Milos Forman", "born" : 1932}
+"Person::DianeK" : {"name" : "Diane Keaton", "born" : 1946}
+"Person::NancyM" : {"name" : "Nancy Meyers", "born" : 1949}
+"Person::ChrisC" : {"name" : "Chris Columbus", "born" : 1958}
+"Person::JuliaR" : {"name" : "Julia Roberts", "born" : 1967}
+"Person::Madonna" : {"name" : "Madonna", "born" : 1954}
+"Person::GeenaD" : {"name" : "Geena Davis", "born" : 1956}
+"Person::LoriP" : {"name" : "Lori Petty", "born" : 1963}
+"Person::PennyM" : {"name" : "Penny Marshall", "born" : 1943}
+"Person::PaulBlythe" : {"name" : "Paul Blythe"}
+"Person::AngelaScope" : {"name" : "Angela Scope"}
+"Person::JessicaThompson" : {"name" : "Jessica Thompson"}
+"Person::JamesThompson" : {"name" : "James Thompson"}
+

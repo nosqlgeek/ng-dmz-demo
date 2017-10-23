@@ -1,0 +1,1 @@
+MATCH (keanu {name:"Keanu Reeves"})-[:ACTED_IN]->(movies {title:"The Matrix"})<-[:ACTED_IN]-(actors) RETURN actors
