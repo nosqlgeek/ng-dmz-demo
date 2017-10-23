@@ -71,15 +71,8 @@ npm install redis --save
 * The tool 'load_redis' parses some JSON data and inserts Hashes into Redis
 
 ```
-var valueArr = [];
-
-for (prop in kvPair[1]) {
-  valueArr.push(prop);
-  valueArr.push(kvPair[1][prop]);
-}
-
-client.hmset(kvPair[0], valueArr, function (err, res) {
- console.log(res);
+client.hset(kvPair[0], kvPair[1], function (err, res) {
+  console.log(res);
 });
 ```
 
