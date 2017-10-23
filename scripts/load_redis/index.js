@@ -105,14 +105,8 @@ function main() {
           }
 
           //Insert as HashMap
-          var valueArr = [];
-
-          for (prop in kvPair[1]) {
-            valueArr.push(prop);
-            valueArr.push(kvPair[1][prop]);
-          }
-
-          client.hmset(kvPair[0], valueArr, function (err, res) {
+          //BTW: Plain JSON is automatically converted to a Hash
+          client.hmset(kvPair[0], kvPair[1], function (err, res) {
             console.log(res);
           });
 
