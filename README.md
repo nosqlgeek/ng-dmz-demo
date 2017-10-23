@@ -167,7 +167,7 @@ SUBSCRIBE public
 PUBLISH public Person::Keanu 
 ```
 
-* Enable key space notifications via redis-cli
+* Enable key space notifications via redis-cli (https://redis.io/topics/notifications)
 
 ```
 CONFIG SET notify-keyspace-events KEA
@@ -184,5 +184,7 @@ redis-cli --csv psubscribe '__key*__:*'
 ```
 HMSET Person::Keanu changed 1
 ```
+
+> BTW: Redis Modules allow to turn Redis into a Hexastore backed GraphDBS: http://redisgraph.io
 
 * Show the windows with the csv output
