@@ -96,7 +96,7 @@ if (kvPair[1].hasOwnProperty("born")) {
 * List all persons starting with a 'K'
 
 ```
-KEYS Person::Ke*
+KEYS Actor::Ke*
 ```
 
 > This is dirty as it means scanning the whole key space!
@@ -104,24 +104,24 @@ KEYS Person::Ke*
 * Get all properties
 
 ```
-HGETALL Person::Keanu
+HGETALL Actor::Keanu
 ``` 
 
 * Get a specific property
 
 ```
-HGET Person::Keanu name
+HGET Actor::Keanu name
 ```
 
 * Range 'query' by year of birth
 
 ```
 ZRANGEBYSCORE idx::born 1978 1985
-1) "Person::Emil"
-2) "Person::ChristinaR"
-3) "Person::NatalieP"
-4) "Person::Rain"
-5) "Person::EmileH"
+1) "Actor::Emil"
+2) "Actor::ChristinaR"
+3) "Actor::NatalieP"
+4) "Actor::Rain"
+5) "Actor::EmileH"
 ```
 
 * Optional: Show the Redis Pack Enterprise Web UI
@@ -177,7 +177,7 @@ SUBSCRIBE public
 * Publish a message
 
 ```
-PUBLISH public Person::Keanu 
+PUBLISH public Actor::Keanu 
 ```
 
 * Enable key space notifications via redis-cli (https://redis.io/topics/notifications)
@@ -195,7 +195,7 @@ redis-cli --csv psubscribe '__key*__:*'
 * Change Keanu
 
 ```
-HMSET Person::Keanu changed 1
+HMSET Actor::Keanu changed 1
 ```
 
 > BTW: Redis Modules allow to turn Redis into a Hexastore backed GraphDBS: http://redisgraph.io
