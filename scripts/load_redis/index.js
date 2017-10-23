@@ -1,16 +1,6 @@
 const fs = require('fs');
 const redis = require('redis');
 
-
-//Redis Client
-var client = redis.createClient();
-
-
-client.on("error", function (err) {
-    console.log("Error " + err);
-});
-
-
 function usage() {
  
   console.log("Use: node index.js <file.json> <port>");
